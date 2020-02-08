@@ -1,0 +1,107 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin-bottom: .3em;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2.25em;
+}
+
+h3 {
+  font-size: 1.8em;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.7em;
+}
+
+img {
+  width: 180px;
+}
+
+figure,
+p,
+ul {
+  margin: 0;
+}
+
+#container {
+  display: grid;
+  grid-template-areas: "hero hero hero hero hero"
+    "summary summary summary summary summary"
+    "experience experience experience experience skills"
+    "experience experience experience experience skills"
+    "experience experience experience experience skills"
+    "projects projects projects projects skills";
+  grid-column-gap: 35px;
+  margin: 0 auto;
+  width: 1000px;
+}
+
+#hero {
+  display: flex;
+  grid-area: hero;
+}
+
+#info {
+  margin-left: 40px;
+}
+
+#summary {
+  grid-area: summary;
+  position: relative;
+}
+
+#experience {
+  grid-area: experience;
+  position: relative;
+}
+
+#skills {
+  grid-area: skills;
+  position: relative;
+}
+
+#projects {
+  grid-area: projects;
+  position: relative;
+}
+
+.technology {
+  color: white;
+  background: #6C757E;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.has-afterline::after {
+  content: '';
+  border-bottom: 1px solid darkgrey;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 70px;
+}
+
+.project__details {
+  display: flex;
+  justify-content: space-between;
+  justify-content: start;
+}
+
+.project__img {
+  width: 120px;
+  margin-right: 2em;
+}

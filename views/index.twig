@@ -1,0 +1,126 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Resume{% endblock %}
+
+{% block content %}
+  <section id="hero">
+    <figure>
+      <img src="profile.png" alt="Profile image">
+    </figure>
+    <div id="info">
+      <h1>{{ name }}</h1>
+      <h2>Full Stack Developer</h2>
+      <ul>
+        <li>Mail: mgonzalesn17@outlook.com</li>
+        <li>Phone: 999999999</li>
+        <li>LinkedIn: https://www.linkedin.com/in/mateo-gonzales-navarrete-644797173/</li>
+        <li>Twitter: @mgonnav</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="summary">
+    <h1 class="has-afterline">Carrer Summary</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h3 class="has-afterline">Work Experience</h3>
+    <ul>
+      {% for job in jobs %}
+        {% if job.visible %}
+          <li>
+            <h3>{{ job.title }}</h3>
+            <p>{{ job.description }}</p>
+            <p>{{ job.duration }}</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis suscipit nisi veritatis pariatur
+            porro animi sit, asperiores rem, qui voluptates, est consectetur dolores voluptate magni doloremque. Officia
+            non sed optio!</p>
+            <p>
+            <strong>Achievements:</strong>
+            <ul>
+            <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
+            <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
+            <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
+            </ul>
+            </p>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2 class="has-afterline">Skills & Tools</h2>
+    <p>
+      <h3>Backend</h3>
+      <ul>
+        <li>PHP</li>
+      </ul>
+    </p>
+    <p>
+      <h3>Frontend</h3>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+      </ul>
+    </p>
+    <p>
+      <h3>Frameworks</h3>
+      <ul>
+        <li>Laravel</li>
+        <li>React</li>
+      </ul>
+    </p>
+    <p id="languages">
+      <h3 class="has-afterline">Languages</h3>
+      <ul>
+        <li>Spanish</li>
+        <li>English</li>
+      </ul>
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2 class="has-afterline">Projects</h2>
+    <ul>
+      {% for project in projects %}
+        <li class="projectItem">
+          <h3>{{ project.title }}</h3>
+          <div class="project__details">
+            {% if project.logo %}
+              <figure>
+                <img class="project__img" src="uploads/{{ project.logo }}" alt="Project image">
+              </figure>
+            {% endif %}
+            <div class="project__info">
+              <p>{{ project.description }}</p>
+              <p>{{ project.duration }}</p>
+              <p>
+                <strong>Technologies used:</strong>
+                <span class="technology">PHP</span>
+                <span class="technology">Javascript</span>
+                <span class="technology">HTML</span>
+                <span class="technology">CSS</span>
+              </p>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="style.css">
+{% endblock %}

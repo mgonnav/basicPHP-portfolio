@@ -1,0 +1,32 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Add Job{% endblock %}
+
+{% block content %}
+  <h1>Add Job</h1>
+
+  {% if responseMessage == 'Saved' %}
+    <div class="success">{{ responseMessage }}</div>
+  {% elseif responseMessage != null %}
+    <div class="alert">{{ responseMessage }}</div>
+  {% endif %}
+
+  <form action="/jobs/add" method="POST">
+    <label for="">Title:</label>
+    <input type="text" name="title" required><br />
+    <label for="">Description:</label>
+    <input type="text" name="description" required><br />
+    <label for="">Visible:</label>
+    <select name="visible" required>
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select><br />
+    <label for="">Months:</label>
+    <input type="number" name="months" required><br />
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="../public/add.css">
+{% endblock %}

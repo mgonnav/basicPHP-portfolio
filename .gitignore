@@ -1,0 +1,8 @@
+# Composer generated files
+vendor/
+# User uploaded files
+uploads/
+# Images
+*.png
+# Environment varialbes
+.env

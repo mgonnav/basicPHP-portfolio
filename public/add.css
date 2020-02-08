@@ -1,0 +1,17 @@
+.alert {
+  color: red;
+  border: 1px solid red;
+  border-radius: 10px;
+  padding: 20px 10px;
+  background-color: rgba(255, 0, 0, .2);
+  margin-bottom: 10px;
+}
+
+.success {
+  color: green;
+  border: 1px solid green;
+  border-radius: 10px;
+  padding: 20px 10px;
+  background-color: rgba(0, 255, 0, .2);
+  margin-bottom: 10px;
+}

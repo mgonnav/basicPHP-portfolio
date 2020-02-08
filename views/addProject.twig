@@ -1,0 +1,28 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Add Project{% endblock %}
+
+{% block content %}
+  <h1>Add Project</h1>
+
+  {% if responseMessage == 'Saved' %}
+    <div class="success">{{ responseMessage }}</div>
+  {% elseif responseMessage != null %}
+    <div class="alert">{{ responseMessage }}</div>
+  {% endif %}
+
+  <form action="/projects/add" method="POST" enctype="multipart/form-data">
+    <label for="">Title:</label>
+    <input type="text" name="title" required><br />
+    <label for="">Description:</label>
+    <input type="text" name="description" required><br />
+    <label for="">Months:</label>
+    <input type="number" name="months" required><br />
+    <input type="file" name="logo"><br />
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="../public/add.css">
+{% endblock %}

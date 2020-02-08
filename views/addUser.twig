@@ -1,0 +1,27 @@
+{% extends 'layout.twig' %}
+
+{% block title %}Add User{% endblock %}
+
+{% block content %}
+  <h1>Add User</h1>
+
+  {% if responseMessage == 'Saved' %}
+    <div class="success">{{ responseMessage }}</div>
+  {% elseif responseMessage != null %}
+    <div class="alert">{{ responseMessage }}</div>
+  {% endif %}
+
+  <form action="/users/add" method="POST" enctype="multipart/form-data">
+    <label for="">Username:</label>
+    <input type="text" name="username" required><br />
+    <label for="">Email:</label>
+    <input type="email" name="email" required><br />
+    <label for="">Password:</label>
+    <input type="password" name="password" required><br />
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" href="../public/add.css">
+{% endblock %}
